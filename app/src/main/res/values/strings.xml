@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CourseProject</string>
+    <string name="sales_icon">Sales</string>
+    <string name="contacts_text">Контакты</string>
+    <string name="about_text">Про нас</string>
+    <string name="main_text">Главная</string>
+    <string name="main_title">Courses</string>
+    <string name="main_title2">App</string>
+    <string name="items">items</string>
+    <string name="course_descr">Программа обучения Джава – рассчитана на новичков в данной сфере. За программу вы изучите построение графических приложений под ПК, разработку веб сайтов на основе Java Spring Boot, изучите построение полноценных Андроид приложений и отлично изучите сам язык Джава!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
