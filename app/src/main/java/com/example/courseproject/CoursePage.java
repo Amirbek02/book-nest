@@ -23,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CoursePage extends AppCompatActivity {
     TextView back;
+    TextView textView, textView4;
 
     static Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://c6a8e086333c6b13.mokky.dev/")
@@ -35,6 +36,23 @@ public class CoursePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_page);
+        textView = findViewById(R.id.textView2);
+        textView4 =findViewById(R.id.textView4);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoursePage.this,AboutUsActivity.class );
+                startActivity(intent);
+            }
+        });
+        textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CoursePage.this,ContactsActivity.class );
+                startActivity(intent);
+            }
+        });
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

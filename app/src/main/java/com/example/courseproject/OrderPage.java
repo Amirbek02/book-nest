@@ -27,6 +27,7 @@ public class OrderPage extends AppCompatActivity {
     List<String> coursesTitle = new ArrayList<>();
     List<Integer> courseIds = new ArrayList<>();
     TextView back;
+    TextView textView, textView4;
 
     ArrayAdapter<String> adapter;
     static Retrofit retrofit = new Retrofit.Builder()
@@ -40,6 +41,23 @@ public class OrderPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+        textView = findViewById(R.id.textView2);
+        textView4 =findViewById(R.id.textView4);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrderPage.this,AboutUsActivity.class );
+                startActivity(intent);
+            }
+        });
+        textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrderPage.this,ContactsActivity.class );
+                startActivity(intent);
+            }
+        });
 
         ListView orders_list = findViewById(R.id.orders_list);
         back = findViewById(R.id.back);
