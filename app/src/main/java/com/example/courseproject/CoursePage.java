@@ -58,8 +58,6 @@ public class CoursePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CoursePage.this, MainActivity.class);
-
-                // Запускаем MainActivity
                 startActivity(intent);
             }
         });
@@ -67,7 +65,6 @@ public class CoursePage extends AppCompatActivity {
         ConstraintLayout courseBg = findViewById(R.id.coursePageBg);
         ImageView courseImage = findViewById(R.id.coursePageImg);
         TextView courseTitle = findViewById(R.id.coursePageTitle);
-        TextView courseLevel = findViewById(R.id.coursePageLevel);
         TextView courseDate = findViewById(R.id.coursePageDate);
         TextView courseText = findViewById(R.id.coursePageText);
         TextView courseAuthor = findViewById(R.id.coursePageAuthor);  // Новое поле для автора

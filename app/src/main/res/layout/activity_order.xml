@@ -123,15 +123,15 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_background"
         android:gravity="bottom"
-android:background="@drawable/btn_background"
-        android:text="Вернуться"
-        android:textSize="20dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:layout_marginBottom="40dp"
+        android:text="Вернуться"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
