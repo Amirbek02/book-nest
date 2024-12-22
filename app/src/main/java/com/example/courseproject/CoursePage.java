@@ -65,7 +65,7 @@ public class CoursePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button btnLink = findViewById(R.id.btn_link);
+        TextView btnLink = findViewById(R.id.btn_link);
         btnLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

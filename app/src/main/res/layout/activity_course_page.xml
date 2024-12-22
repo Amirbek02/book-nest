@@ -236,25 +236,33 @@
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-    <Button
+    <TextView
         android:id="@+id/btn_link"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_background"
+        android:layout_marginTop="20dp"
         android:text="Начать"
-
+        android:gravity="center"
+        android:textSize="20dp"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/coursePageText" />
 
     <!-- Кнопка добавления курса -->
-    <ImageButton
+    <TextView
         android:id="@+id/addCourseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="@android:color/transparent"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-40dp"
+        android:background="@drawable/btn_background"
         android:onClick="addToCard"
+        android:text="Добавить в корзину"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:padding="5dp"
         app:layout_constraintBottom_toTopOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
@@ -263,13 +271,12 @@
 
     <TextView
         android:id="@+id/back"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/btn_background"
-        android:gravity="bottom"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:gravity="center"
+        android:padding="5dp"
         android:text="Вернуться"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
