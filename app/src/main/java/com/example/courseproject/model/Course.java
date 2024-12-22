@@ -14,10 +14,11 @@ public class Course {
     private String language;
     private String form;
     private String theme;
+    private String link;
 
     // Конструктор
     public Course(int id, String img, String title, String date, String author, String color,
-                  int category, String publisher, int pages, String language, String form, String theme) {
+                  int category, String publisher, int pages, String language, String form, String theme, String link) {
         this.id = id;
         this.img = img;
         this.title = title;
@@ -31,6 +32,7 @@ public class Course {
         this.language = language;
         this.form = form;
         this.theme = theme;
+        this.link = link;
     }
 
     // Геттеры и сеттеры
@@ -136,5 +138,13 @@ public class Course {
 
     public void setTheme(String theme) {
         this.theme = theme;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

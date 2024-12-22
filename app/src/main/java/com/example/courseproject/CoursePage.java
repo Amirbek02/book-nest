@@ -1,12 +1,16 @@
 package com.example.courseproject;
 
+import static android.util.Log.v;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,6 +65,17 @@ public class CoursePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button btnLink = findViewById(R.id.btn_link);
+        btnLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Укажите URL-адрес
+                String url = getIntent().getStringExtra("courseLink");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
 
         ConstraintLayout courseBg = findViewById(R.id.coursePageBg);
         ImageView courseImage = findViewById(R.id.coursePageImg);
@@ -71,7 +86,8 @@ public class CoursePage extends AppCompatActivity {
         TextView coursePublisher = findViewById(R.id.coursePagePublisher);  // Новое поле для издательства
         TextView coursePages = findViewById(R.id.coursePagePages);  // Новое поле для количества страниц
         TextView courseLanguage = findViewById(R.id.coursePageLanguage);  // Новое поле для языка
-        TextView courseForm = findViewById(R.id.coursePageFormat);  // Новое поле для формы
+        TextView courseForm = findViewById(R.id.coursePageFormat);
+        // Новое поле для формы
 
         // Установка данных из Intent
         courseBg.setBackgroundColor(getIntent().getIntExtra("courseBg", 0));
@@ -98,13 +114,16 @@ public class CoursePage extends AppCompatActivity {
         String coursePublisher = getIntent().getStringExtra("coursePublisher");  // Получение издательства
         int coursePages = getIntent().getIntExtra("coursePages", 0);  // Получение количества страниц
         String courseLanguage = getIntent().getStringExtra("courseLanguage");  // Получение языка
-        String courseForm = getIntent().getStringExtra("courseForm");  // Получение формы
+        String courseForm = getIntent().getStringExtra("courseForm");
+        String courseLink = getIntent().getStringExtra("courseLink");
 
         if (Order.items_id.contains(item_id)) {
             Toast.makeText(this, "Курс уже добавлен!", Toast.LENGTH_SHORT).show();
             Log.d("Amirbek", "Course already added: " + item_id);
             return;
         }
+
+
 
 
         Call<Course> checkCall = courseApi.getOrdersById(item_id);
@@ -117,7 +136,7 @@ public class CoursePage extends AppCompatActivity {
                 } else {
                     Order.items_id.add(item_id);
                     Course addPostCourse = new Course(item_id, courseImage, courseTitle, courseDate, courseBg, courseText,
-                            2, courseAuthor, coursePages, courseLanguage, courseForm, coursePublisher);
+                            2, courseAuthor, coursePages, courseLanguage, courseForm, coursePublisher, courseLink);
 
                     Call<Void> postCall = courseApi.postCourse(addPostCourse);
                     postCall.enqueue(new Callback<Void>() {
